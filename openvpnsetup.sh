@@ -6,7 +6,7 @@ sudo apt-get -y upgrade
 sudo apt-get -y install openvpn
 
 # Copy the easy-rsa files to a directory inside the new openvpn directory
-sudo ./rsacopy.sh
+sudo cp -r /usr/share/doc/openvpn/examples/easy-rsa/2.0 /etc/openvpn/easy-rsa
 
 # Edit the EASY_RSA variable in the vars file to point to the new easy-rsa directory
 cd /etc/openvpn/easy-rsa
