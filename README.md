@@ -14,7 +14,9 @@ microSD card (depending on the model) with Raspbian installed, a power adapter
 appropriate to the power needs of your model, and an ethernet cable to connect your
 Pi to your router or gateway. You will also need to have your router assign a static
 IP address to your Pi and forward port 1194; consult your router manufacturer's
-documentation to do this. Enabling SSH on your Pi is also highly recommended, so that
+documentation to do this. You should also find your Pi's IP address on your local
+network and the public IP address of your network and write them down before beginning.
+Enabling SSH on your Pi is also highly recommended, so that
 you can run a very compact headless server without a monitor or keyboard.
 
 Server-Side Setup
@@ -81,7 +83,8 @@ the script will assemble the client .ovpn file and place it in your home directo
 to access using SFTP or SCP, which you'll need to do to move the profile to your client machine.
 
 To generate additional client .ovpn profiles for other devices you'd like to connect to the VPN,
-simply cd into OpenVPN-Setup, execute the MakeOVPN script, and repeat the above steps:
+simply cd into OpenVPN-Setup, execute the MakeOVPN script, and repeat the above steps for each
+client:
 
 ```shell
 cd OpenVPN-Setup
