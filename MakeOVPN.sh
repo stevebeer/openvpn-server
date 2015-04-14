@@ -75,10 +75,10 @@ echo "</tls-auth>" >> $NAME$FILEEXT
  
 echo "Done! $NAME$FILEEXT Successfully Created."
 
+# Copy the .ovpn profile to the home directory for convenient remote access
 sudo chmod 777 -R /etc/openvpn
 cp /etc/openvpn/easy-rsa/keys/$NAME$FILEEXT /home/pi/$NAME$FILEEXT
 sudo chmod 600 -R /etc/openvpn
 echo "$NAME$FILEEXT moved to home directory."
  
-#Script written by Eric Jodoin
-#\ No newline at end of file
+# Original script written by Eric Jodoin
