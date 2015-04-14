@@ -94,19 +94,23 @@ cd OpenVPN-Setup
 Importing .ovpn Profiles on Client Machines
 --------------------------------------------
 
-To move a client .ovpn profile to Windows, use a program like WinSCP or Cyberduck. To move it
-to Android, you can either retrieve the profile on PC and then move it to your device via USB,
-or you can use an app like Turbo FTP & SFTP client to retrieve it directly from your Android
-device.
+To move a client .ovpn profile to Windows, use a program like WinSCP or Cyberduck. Note that
+you may need administrator permission to move files to some folders on your Windows machine,
+so if you have trouble transferring the profile to a particular folder, try moving it to your
+desktop. To move a profile to Android, you can either retrieve the it on PC and then move
+it to your device via USB, or you can use an app like Turbo FTP & SFTP client to retrieve it
+directly from your Android device.
 
 To import the profile on Windows, install the OpenVPN GUI from the community downloads section of
-openvpn.net and place the profile in the 'config' folder of your OpenVPN directory, i.e., in
+openvpn.net, and place the profile in the 'config' folder of your OpenVPN directory, i.e., in
 'C:\Program Files\OpenVPN\config'. To import the profile on Android, install the OpenVPN Connect
 app, select 'Import' from the drop-down menu in the upper right corner of the main screen, choose
 the directory on your device where you stored the .ovpn file, and select the file.
 
-After you import on your machine and attempt to connect to the VPN server, you'll be asked to
-enter the pass phrase you chose. Do so, and you're in! Enjoy your ~$50 USD private VPN.
+After importing, connect to the VPN server on Windows by running the OpenVPN GUI with
+administrator permissions, right-clicking on the icon in the system tray, and clicking 'Connect',
+or on Android by selecting the profile under 'OpenVPN Profile' and pressing 'Connect'. You'll be
+asked to enter the pass phrase you chose. Do so, and you're in! Enjoy your ~$50 USD private VPN.
 
 Thanks
 ------
