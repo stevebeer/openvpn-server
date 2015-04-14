@@ -97,7 +97,7 @@ Importing .ovpn Profiles on Client Machines
 To move a client .ovpn profile to Windows, use a program like WinSCP or Cyberduck. Note that
 you may need administrator permission to move files to some folders on your Windows machine,
 so if you have trouble transferring the profile to a particular folder, try moving it to your
-desktop. To move a profile to Android, you can either retrieve the it on PC and then move
+desktop. To move a profile to Android, you can either retrieve it on PC and then move
 it to your device via USB, or you can use an app like Turbo FTP & SFTP client to retrieve it
 directly from your Android device.
 
