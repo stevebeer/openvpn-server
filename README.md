@@ -14,9 +14,9 @@ microSD card (depending on the model) with Raspbian installed, a power adapter
 appropriate to the power needs of your model, and an ethernet cable to connect your
 Pi to your router or gateway. You will also need to have your router assign a static
 IP address to your Pi and forward port 1194; consult your router manufacturer's
-documentation to do this. You should also find your Pi's IP address on your local
-network and the public IP address of your network and write them down before beginning.
-Enabling SSH on your Pi is also highly recommended, so that
+documentation to do this. You should also find your Pi's local IP address on your
+network and the public IP address of your network and write them down before
+beginning. Enabling SSH on your Pi is also highly recommended, so that
 you can run a very compact headless server without a monitor or keyboard.
 
 Server-Side Setup
