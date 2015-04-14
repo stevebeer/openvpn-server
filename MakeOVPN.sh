@@ -14,6 +14,7 @@ echo "Please enter a Name for the Client:"
 read NAME 
  
 #Build the client key and then encrypt the key
+sudo chmod 777 -R /etc/openvpn
 cd /etc/openvpn/easy-rsa
 source ./vars
 ./build-key-pass $NAME
@@ -76,7 +77,6 @@ echo "</tls-auth>" >> $NAME$FILEEXT
 echo "Done! $NAME$FILEEXT Successfully Created."
 
 # Copy the .ovpn profile to the home directory for convenient remote access
-sudo chmod 777 -R /etc/openvpn
 cp /etc/openvpn/easy-rsa/keys/$NAME$FILEEXT /home/pi/$NAME$FILEEXT
 sudo chmod 600 -R /etc/openvpn
 echo "$NAME$FILEEXT moved to home directory."
