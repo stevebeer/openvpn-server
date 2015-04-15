@@ -79,7 +79,7 @@ accidentally mess it up, but make sure it's one you'll remember! You'll then be 
 input in another series of identification fields, which you can again ignore if you like; make
 sure you again leave the challenge field blank. The script will then ask again whether you want
 to sign the client certificate and commit; press 'y' for both. You'll then be asked to enter the
-pass phrase you just entered in order to encrypt the client key, and immediately after to choose
+pass phrase you just chose in order to encrypt the client key, and immediately after to choose
 another pass phrase for the encrypted key - if you're normal, just use the same one. After this,
 the script will assemble the client .ovpn file and place it in your home directory to make it easy
 to access using SFTP or SCP, which you'll need to do to move the profile to your client machine.
@@ -98,16 +98,16 @@ Importing .ovpn Profiles on Client Machines
 
 To move a client .ovpn profile to Windows, use a program like WinSCP or Cyberduck. Note that
 you may need administrator permission to move files to some folders on your Windows machine,
-so if you have trouble transferring the profile to a particular folder, try moving it to your
-desktop. To move a profile to Android, you can either retrieve it on PC and then move
-it to your device via USB, or you can use an app like Turbo FTP & SFTP client to retrieve it
-directly from your Android device.
+so if you have trouble transferring the profile to a particular folder with your chosen file
+transfer program, try moving it to your desktop. To move a profile to Android, you can either
+retrieve it on PC and then move it to your device via USB, or you can use an app like Turbo
+FTP & SFTP client to retrieve it directly from your Android device.
 
-To import the profile on Windows, download the OpenVPN GUI from the community downloads section
-of openvpn.net, install it, and place the profile in the 'config' folder of your OpenVPN directory,
-i.e., in 'C:\Program Files\OpenVPN\config'. To import the profile on Android, install the OpenVPN
-Connect app, select 'Import' from the drop-down menu in the upper right corner of the main screen,
-choose the directory on your device where you stored the .ovpn file, and select the file.
+To import the profile to OpenVPN on Windows, download the OpenVPN GUI from the community downloads
+section of openvpn.net, install it, and place the profile in the 'config' folder of your OpenVPN
+directory, i.e., in 'C:\Program Files\OpenVPN\config'. To import the profile on Android, install
+the OpenVPN Connect app, select 'Import' from the drop-down menu in the upper right corner of the
+main screen, choose the directory on your device where you stored the .ovpn file, and select the file.
 
 After importing, connect to the VPN server on Windows by running the OpenVPN GUI with
 administrator permissions, right-clicking on the icon in the system tray, and clicking 'Connect',
