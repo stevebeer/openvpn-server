@@ -85,7 +85,7 @@ the script will assemble the client .ovpn file and place it in your home directo
 to access using SFTP or SCP, which you'll need to do to move the profile to your client machine.
 
 To generate additional client .ovpn profiles for other devices you'd like to connect to the VPN,
-simply cd into OpenVPN-Setup, execute the MakeOVPN script, and repeat the above steps for each
+simply cd into OpenVPN-Setup and execute the MakeOVPN script, repeating the above steps, for each
 client:
 
 ```shell
