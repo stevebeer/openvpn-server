@@ -9,15 +9,16 @@ OpenVPN software. Includes templates of the necessary configuration files for ea
 editing, as well as a script for easily generating client .ovpn profiles after
 setting up the server.
 
-To follow this guide, you will need to have a Raspberry Pi Model B or later, an SD or
-microSD card (depending on the model) with Raspbian installed, a power adapter
-appropriate to the power needs of your model, and an ethernet cable to connect your
-Pi to your router or gateway. You will also need to have your router assign a static
-IP address to your Pi and forward port 1194; consult your router manufacturer's
-documentation to do this. You should also find your Pi's local IP address on your
-network and the public IP address of your network and write them down before
-beginning. Enabling SSH on your Pi is also highly recommended, so that
-you can run a very compact headless server without a monitor or keyboard.
+To follow this guide, you will need to have a Raspberry Pi Model B or later (so long
+as it has an ethernet port), an SD or microSD card (depending on the model) with
+Raspbian installed, a power adapter appropriate to the power needs of your model,
+and an ethernet cable to connect your Pi to your router or gateway. You will also
+need to have your router assign a static IP address to your Pi and forward port 1194;
+consult your router manufacturer's documentation to do this. You should also find
+your Pi's local IP address on your network and the public IP address of your network
+and write them down before beginning. Enabling SSH on your Pi is also highly
+recommended, so that you can run a very compact headless server without a monitor or
+keyboard.
 
 Server-Side Setup
 -----------------
@@ -115,9 +116,9 @@ asked to enter the pass phrase you chose. Do so, and you're in! Enjoy your ~$50 
 Thanks
 ------
 
-This script simplifies the process for setting up OpenVPN on a Raspberry Pi outlined by a great
-many people in many corners of the internet. It is based largely on the steps outlined
-by Lauren Orsini at readwrite.com in her excellent two-part tutorial, Building A Raspberry Pi
-VPN, and many thanks go to her and readwrite for bringing together the steps of the setup process
+This script automates and streamlines the process outlined by a great many people from many corners
+of the internet for setting up OpenVPN on a Raspberry Pi. In particular, it is based on the steps
+outlined by Lauren Orsini at readwrite.com in her excellent two-part tutorial, Building A Raspberry
+Pi VPN, and many thanks go to her for bringing together the steps of the setup process
 in a way that even I could understand. Thanks also go to the Raspberry Pi Foundation for the
 awesome Raspberry Pi, and to OpenVPN and their fantastic open-source community.
