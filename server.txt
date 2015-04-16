@@ -34,3 +34,4 @@ persist-tun
 status /var/log/openvpn-status.log 20
 log /var/log/openvpn.log
 verb 1
+# This configuration file was originally written by Lauren Orsini at ReadWrite
