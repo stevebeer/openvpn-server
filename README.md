@@ -20,8 +20,8 @@ manufacturer's documentation to do this). You should also find your Pi's local I
 address on your network and the public IP address of your network and write them
 down before beginning. Enabling SSH on your Pi is also highly recommended, so that
 you can run a very compact headless server without a monitor or keyboard and be able
-to access it even more conveniently. And last but not least, be sure to change your
-user password from the default.
+to access it even more conveniently (This is also covered by source 4). And last but
+not least, be sure to change your user password from the default.
 
 Server-Side Setup
 -----------------
