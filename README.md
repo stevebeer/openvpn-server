@@ -130,6 +130,9 @@ and to OpenVPN and their fantastic open-source community.
 Sources
 -------
 1: http://readwrite.com/2014/04/10/raspberry-pi-vpn-tutorial-server-secure-web-browsing
+
 2: http://readwrite.com/2014/04/11/building-a-raspberry-pi-vpn-part-two-creating-an-encrypted-client-side#awesm=~oB89WBfWrt21bV
+
 3: https://www.modmypi.com/blog/tutorial-how-to-give-your-raspberry-pi-a-static-ip-address
+
 4: http://readwrite.com/2014/04/09/raspberry-pi-projects-ssh-remote-desktop-static-ip-tutorial?utm_content=readwrite3-orionautotweet&awesm=readwr.it_b1UN&utm_campaign=&utm_medium=readwr.it-twitter&utm_source=t.co#awesm=~oAXilI0BMOHsS3
