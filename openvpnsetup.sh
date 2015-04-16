@@ -47,7 +47,7 @@ sudo sysctl -p
 sed 's/LOCALIP/'$LOCALIP'/' </home/pi/OpenVPN-Setup/firewall-openvpn-rules.txt >/etc/firewall-openvpn-rules.sh
 sudo chmod 700 /etc/firewall-openvpn-rules.sh
 sudo chown root /etc/firewall-openvpn-rules.sh
-sed -i '/iface eth0 inet dhcp/a \
+sed -i '/gateway/a \
 	pre-up /etc/firewall-openvpn-rules.sh' /etc/network/interfaces
 
 # Write default file for client .ovpn profiles, to be used by the MakeOVPN script, using template .txt file
