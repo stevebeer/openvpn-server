@@ -14,8 +14,8 @@ To follow this guide, you will need to have a Raspberry Pi Model B or later (so 
 as it has an ethernet port), an SD or microSD card (depending on the model) with
 Raspbian installed, a power adapter appropriate to the power needs of your model,
 and an ethernet cable to connect your Pi to your router or gateway. You will also
-need to setup your Pi with a static IP address (see sources 3 and 4) and have your
-router forward port 1194 (varies by model & manufacturer; consult your router
+need to setup your Pi with a static IP address (see either source 3 or 4) and have
+your router forward port 1194 (varies by model & manufacturer; consult your router
 manufacturer's documentation to do this). You should also find your Pi's local IP
 address on your network and the public IP address of your network and write them
 down before beginning. Enabling SSH on your Pi is also highly recommended, so that
