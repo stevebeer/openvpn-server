@@ -28,7 +28,6 @@ if [ ! -f $NAME$CRT ]; then
 fi 
 echo "Client�s cert found: $NAME$CR" 
  
- 
 #Then, verify that there is a private key for that client 
 if [ ! -f $NAME$KEY ]; then 
  echo "[ERROR]: Client 3des Private Key not found: $NAME$KEY" 
@@ -81,4 +80,4 @@ cp /etc/openvpn/easy-rsa/keys/$NAME$FILEEXT /home/pi/$NAME$FILEEXT
 sudo chmod 600 -R /etc/openvpn
 echo "$NAME$FILEEXT moved to home directory."
  
-# Original script written by Eric Jodoin
+# Original script written by Eric Jodoin.
