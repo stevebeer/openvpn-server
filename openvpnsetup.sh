@@ -8,9 +8,15 @@ sudo apt-get -y install openvpn
 # Copy the easy-rsa files to a directory inside the new openvpn directory
 cp -r /usr/share/doc/openvpn/examples/easy-rsa/2.0 /etc/openvpn/easy-rsa
 
+# 
+echo "What encryption method would you like, 1024-bit or 2048-bit?"
+echo "2048 will take much longer to set up. Enter your choice, 1024 or 2048:"
+read ENCRYPT
+
 # Edit the EASY_RSA variable in the vars file to point to the new easy-rsa directory
 cd /etc/openvpn/easy-rsa
 sed -i -e 's:"`pwd`":"/etc/openvpn/easy-rsa":' vars
+sed -i -e 's:1024:'$ENCRYPT':' vars
 
 # source the vars file just edited
 source ./vars
@@ -38,6 +44,7 @@ read PUBLICIP
 
 # Write config file for server using the template .txt file
 sed 's/LOCALIP/'$LOCALIP'/' </home/pi/OpenVPN-Setup/server.txt >/etc/openvpn/server.conf
+sed -i -e 's:ENCRYPT:'$ENCRYPT':' /etc/openvpn/server.conf
 
 # Enable forwarding of internet traffic
 sed -i -e 's:#net.ipv4.ip_forward=1:net.ipv4.ip_forward=1:' /etc/sysctl.conf
