@@ -5,13 +5,13 @@ port 1194
 ca /etc/openvpn/easy-rsa/keys/ca.crt
 cert /etc/openvpn/easy-rsa/keys/server.crt
 key /etc/openvpn/easy-rsa/keys/server.key
-dh /etc/openvpn/easy-rsa/keys/dhENCRYPT.pem
+dh /etc/openvpn/easy-rsa/keys/dh1024.pem
 server 10.8.0.0 255.255.255.0
 # server and remote endpoints
 ifconfig 10.8.0.1 10.8.0.2
 # Add route to Client routing table for the OpenVPN Server
 push "route 10.8.0.1 255.255.255.255"
-# Add route to Client routing table for the OpenVPN Subnet
+# Add route to Client routing table for the OPenVPN Subnet
 push "route 10.8.0.0 255.255.255.0"
 # your local subnet
 push "route LOCALIP 255.255.255.0"
