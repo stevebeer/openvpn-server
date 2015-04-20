@@ -24,7 +24,6 @@ cd /etc/openvpn/easy-rsa
 sed -i -e 's:"`pwd`":"/etc/openvpn/easy-rsa":' vars
 if [ $ENCRYPT = 2048 ]; then
  sed -i -e 's:KEY_SIZE=1024:KEY_SIZE=2048:' vars
- exit
 fi
 
 # source the vars file just edited
@@ -49,7 +48,6 @@ openvpn --genkey --secret keys/ta.key
 sed 's/LOCALIP/'$LOCALIP'/' </home/pi/OpenVPN-Setup/server.txt >/etc/openvpn/server.conf
 if [ $ENCRYPT = 2048 ]; then
  sed -i 's/dh1024/dh2048/' vars
- exit
 fi
 
 # Enable forwarding of internet traffic
@@ -65,5 +63,8 @@ sed -i '/gateway/a \
 
 # Write default file for client .ovpn profiles, to be used by the MakeOVPN script, using template .txt file
 sed 's/PUBLICIP/'$PUBLICIP'/' </home/pi/OpenVPN-Setup/Default.txt >/etc/openvpn/easy-rsa/keys/Default.txt
+
+# Make directory under home directory for .ovpn profiles
+mkdir /home/pi/ovpns
 
 echo "Configuration complete. Restart system to apply changes and start VPN server."
