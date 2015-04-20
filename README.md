@@ -130,7 +130,7 @@ Technical Support & User Feedback
 I am interested in making this script work for as many people as possible, so I welcome any
 feedback on your experience. If you have problems using it, feel free to send me an email and
 I'll get back to you as soon as I can. My expertise and resources are limited, but I will try to
-help, and if I can't, find some more resources to point you to.
+help, and if I can't, I'll find some more resources to point you to.
 
 I am also interested in improving this script, and will be adding features to it over time to
 make it easier, more intuitive, and/or more versatile. If you have any feature ideas or requests,
