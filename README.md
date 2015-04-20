@@ -64,9 +64,9 @@ field and leave it blank. However, after this, you will be asked whether you wan
 the certificate; you must press 'y'. You'll also be asked if you want to commit - press 'y'
 again. Finally, the script will take some time to build the server's Diffie-Hellman key
 exchange. If you chose 1024-bit encryption, this will just take a few minutes, but if you
-chose 2048-bit, it will take much longer. When the script informs you that it has finished
-configuring OpenVPN,  reboot the system to apply the script's changes, and the VPN
-server-side setup will be complete!
+chose 2048-bit, it will take much longer (about an hour on a Model B+). When the script
+informs you that it has finished configuring OpenVPN, reboot the system to apply the
+script's changes, and the VPN server-side setup will be complete!
 
 Making Client Profiles
 ----------------------
