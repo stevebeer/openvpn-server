@@ -47,7 +47,7 @@ openvpn --genkey --secret keys/ta.key
 # Write config file for server using the template .txt file
 sed 's/LOCALIP/'$LOCALIP'/' </home/pi/OpenVPN-Setup/server.txt >/etc/openvpn/server.conf
 if [ $ENCRYPT = 2048 ]; then
- sed -i 's/dh1024/dh2048/' vars
+ sed -i 's:dh1024:dh2048:' vars
 fi
 
 # Enable forwarding of internet traffic
