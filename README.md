@@ -14,7 +14,9 @@ To follow this guide and use this script to setup OpenVPN, you will need to have
 Raspberry Pi Model B or later (so long as it has an ethernet port), an SD or microSD
 card (depending on the model) with Raspbian installed, a power adapter appropriate
 to the power needs of your model, and an ethernet cable to connect your Pi to your
-router or gateway. You will also need to setup your Pi with a static IP address (see
+router or gateway. It is recommended that you use a fresh image of Raspbian, but if
+you don't, be sure to make a backup image of your existing installation before
+proceeding. You will also need to setup your Pi with a static IP address (see
 either source 3 or 4) and have your router forward port 1194 (varies by model &
 manufacturer; consult your router manufacturer's documentation to do this). You
 should also find your Pi's local IP address on your network and the public IP
