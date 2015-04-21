@@ -3,7 +3,7 @@
 # Remove openvpn
 apt-get -y remove openvpn
 
-# Remove directories
+# Remove openvpn-related directories
 rm -r /etc/openvpn /home/pi/ovpns
 
 # Remove firewall script and reference to it in interfaces
