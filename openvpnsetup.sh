@@ -1,9 +1,9 @@
 #!/bin/bash
 
 # Update packages and install openvpn
-sudo apt-get update
-sudo apt-get -y upgrade
-sudo apt-get -y install openvpn
+apt-get update
+apt-get -y upgrade
+apt-get -y install openvpn
 
 # Read the local and public IP addresses from the user
 echo "Enter your Raspberry Pi's local IP address:"
@@ -47,7 +47,7 @@ openvpn --genkey --secret keys/ta.key
 # Write config file for server using the template .txt file
 sed 's/LOCALIP/'$LOCALIP'/' </home/pi/OpenVPN-Setup/server.txt >/etc/openvpn/server.conf
 if [ $ENCRYPT = 2048 ]; then
- sed -i 's:dh1024:dh2048:' vars
+ sed -i 's:dh1024:dh2048:' /etc/openvpn/server.conf
 fi
 
 # Enable forwarding of internet traffic
@@ -66,5 +66,6 @@ sed 's/PUBLICIP/'$PUBLICIP'/' </home/pi/OpenVPN-Setup/Default.txt >/etc/openvpn/
 
 # Make directory under home directory for .ovpn profiles
 mkdir /home/pi/ovpns
+chmod 777 -R /home/pi/ovpns
 
 echo "Configuration complete. Restart system to apply changes and start VPN server."
