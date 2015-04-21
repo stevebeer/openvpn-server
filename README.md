@@ -64,9 +64,9 @@ field and leave it blank. However, after this, you will be asked whether you wan
 the certificate; you must press 'y'. You'll also be asked if you want to commit - press 'y'
 again. Finally, the script will take some time to build the server's Diffie-Hellman key
 exchange. If you chose 1024-bit encryption, this will just take a few minutes, but if you
-chose 2048-bit, it will take much longer (about an hour on a Model B+). When the script
-informs you that it has finished configuring OpenVPN, reboot the system to apply the
-script's changes, and the VPN server-side setup will be complete!
+chose 2048-bit, it will take much longer (anywhere from 40 minutes to several hours on a
+Model B+). When the script informs you that it has finished configuring OpenVPN, reboot
+the system to apply the script's changes, and the VPN server-side setup will be complete!
 
 Making Client Profiles
 ----------------------
@@ -123,6 +123,33 @@ After importing, connect to the VPN server on Windows by running the OpenVPN GUI
 administrator permissions, right-clicking on the icon in the system tray, and clicking 'Connect',
 or on Android by selecting the profile under 'OpenVPN Profile' and pressing 'Connect'. You'll be
 asked to enter the pass phrase you chose. Do so, and you're in! Enjoy your ~$50 USD private VPN.
+
+Removing OpenVPN
+----------------
+
+If at any point you wish to remove OpenVPN from your Pi and revert it to a
+pre-installation state, such as if you want to undo a failed installation to try installing
+again or you want to remove OpenVPN without installing a fresh Raspbian image and losing
+important files, just cd into OpenVPN-Setup and execute the remove.sh script with sudo:
+
+```shell
+cd OpenVPN-Setup
+chmod +x remove.sh
+sudo ./remove.sh
+```
+
+Please note that if your installation failed partway through the process, the removal
+script may try to revert a change in one file that the setup script never made. To make sure
+this hasn't happened and your system is in a state where the setup script can be run again,
+examine the sysctl.conf file in /etc:
+
+```shell
+sudo nano /etc/sysctl.conf
+```
+
+Make sure that the line which contains the text net.ipv4.ip_forward=1 has a single comment
+symbol # before it. If it doesn't, give it one or remove any additional ones, and then
+save the file and exit with ctrl+x.
 
 Technical Support & User Feedback
 ---------------------------------
