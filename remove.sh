@@ -1,5 +1,14 @@
 #!/bin/bash
 
+# Ask user for confirmation
+if (whiptail --title "Remove OpenVPN" --yesno "Are you sure you want to remove\
+OpenVPN and revert your system to its previous state?" 8 78)
+ echo "OpenVPN will be removed."
+else
+ echo "Cancelled"
+ exit
+fi
+
 # Remove openvpn
 apt-get -y remove openvpn
 
@@ -14,3 +23,6 @@ rm /etc/firewall-openvpn-rules.sh
 sed -i '/net.ipv4.ip_forward=1/c\
 #net.ipv4.ip_forward=1' /etc/sysctl.conf
 sysctl -p
+
+whiptail --title "Removal Complete" --msgbox "OpenVPN has been removed and your\
+previous settings have been restored." 8 78
