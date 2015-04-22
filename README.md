@@ -151,19 +151,6 @@ chmod +x remove.sh
 sudo ./remove.sh
 ```
 
-Please note that if your installation failed partway through the process, the removal
-script may try to revert a change in one file that the setup script never made. To make sure
-this hasn't happened and your system is in a state where the setup script can be run again,
-examine the sysctl.conf file in /etc:
-
-```shell
-sudo nano /etc/sysctl.conf
-```
-
-Make sure that the line which contains the text net.ipv4.ip_forward=1 has a single comment
-symbol # before it. If it doesn't, give it one or remove any additional ones, and then
-save the file and exit with ctrl+x.
-
 Technical Support & User Feedback
 ---------------------------------
 
