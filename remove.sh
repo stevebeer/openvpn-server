@@ -25,4 +25,4 @@ sed -i '/net.ipv4.ip_forward=1/c\
 sysctl -p
 
 whiptail --title "Remove OpenVPN" --msgbox "OpenVPN has been removed and your \
-previous settings have been restored." 8 78
+previous settings have been restored. Reboot to apply changes." 8 78
