@@ -136,7 +136,7 @@ important files, just cd into OpenVPN-Setup and execute the remove.sh script wit
 
 ```shell
 cd OpenVPN-Setup
-sudo chmod +x remove.sh
+chmod +x remove.sh
 sudo ./remove.sh
 ```
 
