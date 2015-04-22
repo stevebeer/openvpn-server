@@ -49,7 +49,7 @@ Execute the script with:
 
 ```shell
 cd OpenVPN-Setup
-chmod +x openvpnsetup.sh
+sudo chmod +x openvpnsetup.sh
 sudo ./openvpnsetup.sh
 ```
 
@@ -90,7 +90,7 @@ first client profile, execute the script with:
 
 ```shell
 cd OpenVPN-Setup
-chmod +x MakeOVPN.sh
+sudo chmod +x MakeOVPN.sh
 ./MakeOVPN.sh
 ```
 
@@ -147,7 +147,7 @@ important files, just cd into OpenVPN-Setup and execute the remove.sh script wit
 
 ```shell
 cd OpenVPN-Setup
-chmod +x remove.sh
+sudo chmod +x remove.sh
 sudo ./remove.sh
 ```
 
