@@ -58,17 +58,28 @@ which will take some time. It will then ask you to input your Raspberry Pi's loc
 address on your network and the public IP address of your network. Then, it will ask you
 to enter which encryption method you wish the guts of your server to use, 1024-bit or
 2048-bit; 2048-bit is more secure, but server setup will take much longer to complete. If
-you're unsure or don't have a convincing reason for 2048, just choose 1024. After this, the
-script will prompt you for input in several identifying information fields as it generates
-your certificate authority and server certificate; you can ignore most of these and hit
-'enter' to skip them if you don't care to fill them out. Make sure to skip the challenge
-field and leave it blank. However, after this, you will be asked whether you want to sign
-the certificate; you must press 'y'. You'll also be asked if you want to commit - press 'y'
-again. Finally, the script will take some time to build the server's Diffie-Hellman key
+you're unsure or don't have a convincing reason for 2048, just choose 1024.
+
+After this, the script will build the server's own certificate authority. If you wish to
+enter identifying information for the CA, replace the default values in the file
+ca_info.txt (CO for country, ST for state/province/territory, CITY for city or town, ORG
+for organization, etc.); however, this is not required, so if you have no desire or need
+for this, you may leave the ca_info.txt file as-is. After this, the script will prompt
+you for input in similar identifying information fields as it generates your server
+certificate. Enter whatever you like, or if you do not desire to fill them out, skip
+them by pressing enter; make sure to skip the challenge field and leave it blank. After
+these fields, you will be asked whether you want to sign the certificate; you must press
+'y'. You'll also be asked if you want to commit - press 'y' again.
+
+Finally, the script will take some time to build the server's Diffie-Hellman key
 exchange. If you chose 1024-bit encryption, this will just take a few minutes, but if you
 chose 2048-bit, it will take much longer (anywhere from 40 minutes to several hours on a
-Model B+). When the script informs you that it has finished configuring OpenVPN, reboot
-the system to apply the script's changes, and the VPN server-side setup will be complete!
+Model B+). However, you will not need to enter any more information, so you can go off
+and do your business whle waiting for this last step to finish. The script will also make
+some changes to your system to allow it to forward internet traffic and allow VPN
+connections through the Pi's firewall. When the script informs you that it has finished
+configuring OpenVPN, reboot the system to apply the script's changes, and the VPN
+server-side setup will be complete!
 
 Making Client Profiles
 ----------------------
@@ -158,13 +169,13 @@ Technical Support & User Feedback
 
 I am interested in making this script work for as many people as possible, so I welcome any
 feedback on your experience. If you have problems using it, feel free to send me an email and
-I'll get back to you as soon as I can. My expertise and resources are limited, but I will try to
-help, and if I can't, I'll find some more resources to point you to.
+I'll get back to you as soon as I can. My expertise is limited, but I will try to help, and
+if I can't, I'll find some more resources to point you to.
 
 I am also interested in improving this script, and will be adding features to it over time to
 make it easier, more intuitive, and/or more versatile. If you have any feature ideas or requests,
 or are interested in adding your ideas to it or testing it on other platforms, please also
-contact me.
+contact me. I will be happy to work with you!
 
 Thanks
 ------
