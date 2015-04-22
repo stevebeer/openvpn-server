@@ -6,10 +6,28 @@ apt-get -y upgrade
 apt-get -y install openvpn
 
 # Read the local and public IP addresses from the user
-echo "Enter your Raspberry Pi's local IP address:"
-read LOCALIP
-echo "Enter your network's public IP address:"
-read PUBLICIP
+LOCALIP=$(whiptail --inputbox "What is your Raspberry Pi's local IP address?" \
+8 78 --title "OpenVPN Setup" 3>&1 1>&2 2>&3)
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+ whiptail --title "OpenVPN Setup" --infobox "Local IP: $LOCALIP" 8 78
+else
+ whiptail --title "OpenVPN Setup" --infobox "Cancelled" 8 78
+fi
+
+PUBLICIP=$(whiptail --inputbox "What is the public IP address of network the \
+Raspberry Pi is on?" 8 78 --title "OpenVPN Setup" 3>&1 1>&2 2>&3)
+exitstatus=$?
+if [ $exitstatus = 0 ]; then
+ whiptail --title "OpenVPN Setup" --infobox "PUBLIC IP: $PUBLICIP" 8 78
+else
+ whiptail --title "OpenVPN Setup" --infobox "Cancelled" 8 78
+fi
+
+#echo "Enter your Raspberry Pi's local IP address:"
+#read LOCALIP
+#echo "Enter your network's public IP address:"
+#read PUBLICIP
 # Ask user for desired level of encryption
 echo "1024 or 2048 bit encryption? 2048 is more secure but will take much longer to set up."
 echo "Enter your choice, 1024 or 2048:"
@@ -68,4 +86,5 @@ sed 's/PUBLICIP/'$PUBLICIP'/' </home/pi/OpenVPN-Setup/Default.txt >/etc/openvpn/
 mkdir /home/pi/ovpns
 chmod 777 -R /home/pi/ovpns
 
-echo "Configuration complete. Restart system to apply changes and start VPN server."
+whiptail --title "OpenVPN Setup" --msgbox "Configuration complete. Restart \
+system to apply changes and start VPN server." 8 78
