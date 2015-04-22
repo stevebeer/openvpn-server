@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ask user for confirmation
-if (whiptail --title "Remove OpenVPN" --yesno "Are you sure you want to remove\
+if (whiptail --title "Remove OpenVPN" --yesno "Are you sure you want to remove \
 OpenVPN and revert your system to its previous state?" 8 78) then
  whiptail --title "Remove OpenVPN" --infobox "OpenVPN will be removed." 8 78
 else
@@ -24,5 +24,5 @@ sed -i '/net.ipv4.ip_forward=1/c\
 #net.ipv4.ip_forward=1' /etc/sysctl.conf
 sysctl -p
 
-whiptail --title "Remove OpenVPN" --msgbox "OpenVPN has been removed and your\
+whiptail --title "Remove OpenVPN" --msgbox "OpenVPN has been removed and your \
 previous settings have been restored." 8 78
