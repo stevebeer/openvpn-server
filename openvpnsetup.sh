@@ -44,18 +44,6 @@ of encryption:" 8 78 2 \
 "2048" "Use 2048-bit encryption. This is much slower to set up, but more secure." \
 3>&2 2>&1 1>&3)
 
-
-#ENCRYPT=$(whiptail --inputbox "1024 or 2048 bit encryption? 2048 is more secure \
-#but will take much longer to set up. Enter your choice, 1024 or 2048:" 8 78 \
-#--title "OpenVPN Setup" 3>&1 1>&2 2>&3)
-#exitstatus=$?
-#if [ $exitstatus = 0 ]; then
-# whiptail --title "OpenVPN Setup" --infobox "Encryption level: $PUBLICIP" 8 78
-#else
-# whiptail --title "Setup" --infobox "Cancelled" 8 78
-# exit
-#fi
-
 # Copy the easy-rsa files to a directory inside the new openvpn directory
 cp -r /usr/share/doc/openvpn/examples/easy-rsa/2.0 /etc/openvpn/easy-rsa
 
