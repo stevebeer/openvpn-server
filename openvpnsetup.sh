@@ -18,12 +18,12 @@ apt-get -y install openvpn
 
 # Read the local and public IP addresses from the user
 LOCALIP=$(whiptail --inputbox "What is your Raspberry Pi's local IP address?" \
-8 78 --title "OpenVPN Setup" 3>&1 1>&2 2>&3)
+8 78 --title "Setup OpenVPN" 3>&1 1>&2 2>&3)
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
- whiptail --title "OpenVPN Setup" --infobox "Local IP: $LOCALIP" 8 78
+ whiptail --title "Setup OpenVPN" --infobox "Local IP: $LOCALIP" 8 78
 else
- whiptail --title "OpenVPN Setup" --infobox "Cancelled" 8 78
+ whiptail --title "Setup OpenVPN" --infobox "Cancelled" 8 78
  exit
 fi
 
@@ -31,23 +31,30 @@ PUBLICIP=$(whiptail --inputbox "What is the public IP address of network the \
 Raspberry Pi is on?" 8 78 --title "OpenVPN Setup" 3>&1 1>&2 2>&3)
 exitstatus=$?
 if [ $exitstatus = 0 ]; then
- whiptail --title "OpenVPN Setup" --infobox "PUBLIC IP: $PUBLICIP" 8 78
+ whiptail --title "Setup OpenVPN" --infobox "PUBLIC IP: $PUBLICIP" 8 78
 else
- whiptail --title "OpenVPN Setup" --infobox "Cancelled" 8 78
+ whiptail --title "Setup OpenVPN" --infobox "Cancelled" 8 78
  exit
 fi
 
 # Ask user for desired level of encryption
-ENCRYPT=$(whiptail --inputbox "1024 or 2048 bit encryption? 2048 is more secure \
-but will take much longer to set up. Enter your choice, 1024 or 2048:" 8 78 \
---title "OpenVPN Setup" 3>&1 1>&2 2>&3)
-exitstatus=$?
-if [ $exitstatus = 0 ]; then
- whiptail --title "OpenVPN Setup" --infobox "Encryption level: $PUBLICIP" 8 78
-else
- whiptail --title "OpenVPN Setup" --infobox "Cancelled" 8 78
- exit
-fi
+ENCRYPT=$(whiptail --title "Setup OpenVPN" --menu "Choose your desired level \
+of encryption:" 8 78 2 \
+"1024" "Use 1024-bit encryption. This is faster to set up, but less secure." \
+"2048" "Use 2048-bit encryption. This is much slower to set up, but more secure." \
+3>&2 2>&1 1>&3)
+
+
+#ENCRYPT=$(whiptail --inputbox "1024 or 2048 bit encryption? 2048 is more secure \
+#but will take much longer to set up. Enter your choice, 1024 or 2048:" 8 78 \
+#--title "OpenVPN Setup" 3>&1 1>&2 2>&3)
+#exitstatus=$?
+#if [ $exitstatus = 0 ]; then
+# whiptail --title "OpenVPN Setup" --infobox "Encryption level: $PUBLICIP" 8 78
+#else
+# whiptail --title "Setup" --infobox "Cancelled" 8 78
+# exit
+#fi
 
 # Copy the easy-rsa files to a directory inside the new openvpn directory
 cp -r /usr/share/doc/openvpn/examples/easy-rsa/2.0 /etc/openvpn/easy-rsa
@@ -102,5 +109,5 @@ sed 's/PUBLICIP/'$PUBLICIP'/' </home/pi/OpenVPN-Setup/Default.txt >/etc/openvpn/
 mkdir /home/pi/ovpns
 chmod 777 -R /home/pi/ovpns
 
-whiptail --title "OpenVPN Setup" --msgbox "Configuration complete. Restart \
+whiptail --title "Setup OpenVPN" --msgbox "Configuration complete. Restart \
 system to apply changes and start VPN server." 8 78
