@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Ask user for confirmation
-if (whiptail --title "Remove OpenVPN" --yesno "Are you sure you want to remove \
+if (whiptail --title "Remove OpenVPN" --yesno --defaultno "Are you sure you want to remove \
 OpenVPN and revert your system to its previous state?" 8 78) then
  whiptail --title "Remove OpenVPN" --infobox "OpenVPN will be removed." 8 78
 else
- whiptail --title "Remove OpenVPN" --msgbox "Cancelled." 8 78
+ whiptail --title "Remove OpenVPN" --msgbox "Removal cancelled" 8 78
  exit
 fi
 
