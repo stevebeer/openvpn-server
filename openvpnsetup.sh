@@ -7,6 +7,7 @@ continue?" 8 78) then
  configured." 8 78
 else
  whiptail --title "Setup OpenVPN" --msgbox "Cancelled" 8 78
+ exit
 fi
 
 # Update packages and install openvpn
