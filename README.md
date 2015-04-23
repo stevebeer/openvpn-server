@@ -6,11 +6,12 @@ About
 
 Shell script to set up Raspberry Pi (TM) as a VPN server using the free, open-source
 OpenVPN software. Includes templates of the necessary configuration files for easy
-editing, as well as a script for easily generating client .ovpn profiles after
-setting up the server. Based on the ReadWrite tutorial 'Building A Raspberry
-Pi VPN' by Lauren Orsini (see sources 1 and 2 at the bottom of this Readme).
+editing prior to installation, as well as a script for easily generating client
+.ovpn profiles after setting up the server. Based on the ReadWrite tutorial
+'Building A Raspberry Pi VPN' by Lauren Orsini (see sources 1 and 2 at the bottom of
+this Readme).
 
-To follow this guide and use this script to setup OpenVPN, you will need to have a
+To follow this guide and use the script to setup OpenVPN, you will need to have a
 Raspberry Pi Model B or later (so long as it has an ethernet port), an SD or microSD
 card (depending on the model) with Raspbian installed, a power adapter appropriate
 to the power needs of your model, and an ethernet cable to connect your Pi to your
@@ -38,7 +39,7 @@ sudo apt-get upgrade
 sudo apt-get install git
 ```
 
-Then download the latest setup script with:
+Then download the latest setup script via the command line with:
 
 ```shell
 cd
@@ -56,20 +57,22 @@ sudo ./openvpnsetup.sh
 The script will first update your APT repositories, upgrade packages, and install OpenVPN,
 which will take some time. It will then ask you to input your Raspberry Pi's local IP
 address on your network and the public IP address of your network. Then, it will ask you
-to enter which encryption method you wish the guts of your server to use, 1024-bit or
+to choose which encryption method you wish the guts of your server to use, 1024-bit or
 2048-bit; 2048-bit is more secure, but server setup will take much longer to complete. If
 you're unsure or don't have a convincing reason for 2048, just choose 1024.
 
-After this, the script will build the server's own certificate authority. If you wish to
-enter identifying information for the CA, replace the default values in the file
-ca_info.txt (CO for country, ST for state/province/territory, CITY for city or town, ORG
-for organization, etc.); however, this is not required, so if you have no desire or need
-for this, you may leave the ca_info.txt file as-is. After this, the script will prompt
-you for input in similar identifying information fields as it generates your server
-certificate. Enter whatever you like, or if you do not desire to fill them out, skip
-them by pressing enter; make sure to skip the challenge field and leave it blank. After
-these fields, you will be asked whether you want to sign the certificate; you must press
-'y'. You'll also be asked if you want to commit - press 'y' again.
+After this, the script go from the GUI back to the command line as it builds the server's
+own certificate authority. If you wish to enter identifying information for the CA,
+replace the default values in the file ca_info.txt (CO for country, ST for
+state/province/territory, CITY for city or town, ORG for organization, etc.) before
+executing the setup script; however, this is not required, so if you have no desire or
+need for this, you may leave the ca_info.txt file as-is. After this, the script will
+prompt you in the command line for input in similar identifying information fields as it
+generates your server certificate. Enter whatever you like, or if you do not desire to
+fill them out, skip them by pressing enter; make sure to skip the challenge field and
+leave it blank. After these fields, you will be asked whether you want to sign the
+certificate; you must press 'y'. You'll also be asked if you want to commit - press 'y'
+again.
 
 Finally, the script will take some time to build the server's Diffie-Hellman key
 exchange. If you chose 1024-bit encryption, this will just take a few minutes, but if you
