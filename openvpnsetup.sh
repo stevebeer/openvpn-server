@@ -92,7 +92,8 @@ if [ $ENCRYPT = 2048 ]; then
 fi
 
 # Enable forwarding of internet traffic
-sed -i 's:#net.ipv4.ip_forward=1:net.ipv4.ip_forward=1:' /etc/sysctl.conf
+sed -i '/#net.ipv4.ip_forward=1/c\
+net.ipv4.ip_forward=1' /etc/sysctl.conf
 sudo sysctl -p
 
 # Write script to allow openvpn through firewall on boot using the template .txt file
