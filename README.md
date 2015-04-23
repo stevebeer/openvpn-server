@@ -89,7 +89,7 @@ Making Client Profiles
 
 After the server-side setup is finished and the machine rebooted, you will use the MakeOVPN script
 to generate the .ovpn profiles you will import on each of your client machines. To generate your
-first client profile, execute the script with:
+first client profile, execute the script in the command line with:
 
 ```shell
 cd OpenVPN-Setup
