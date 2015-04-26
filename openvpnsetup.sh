@@ -11,7 +11,7 @@ do
 	case "${CHOICE}" in
 		01)
 			sudo chmod +x install.sh
-			sudo ./openvpnsetup.sh
+			sudo ./install.sh
 			if (whiptail --title "Reboot" --yesno --defaultno "Would you like to reboot now?" 8 78) then
 				whiptail --title "Reboot" --msgbox "The system will reboot." 8 78
 			fi
