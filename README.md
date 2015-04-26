@@ -43,7 +43,7 @@ Then download the latest setup script via the command line with:
 
 ```shell
 cd
-git clone --depth=1 git://github.com/StarshipEngineer/OpenVPN-Setup.git
+git clone git://github.com/StarshipEngineer/OpenVPN-Setup
 ```
 
 Execute the script with:
@@ -53,6 +53,11 @@ cd OpenVPN-Setup
 sudo chmod +x openvpnsetup.sh
 sudo ./openvpnsetup.sh
 ```
+
+The script will show you a menu of options. If this is your first time running the script,
+choose option 01, which will install OpenVPN and configure your system. If you prefer
+bypassing the menu and executing scripts directly from the command line, you can instead
+install simply by making the script install.sh executable and running it with sudo.
 
 The script will first update your APT repositories, upgrade packages, and install OpenVPN,
 which will take some time. It will then ask you to input your Raspberry Pi's local IP
@@ -87,15 +92,10 @@ server-side setup will be complete!
 Making Client Profiles
 ----------------------
 
-After the server-side setup is finished and the machine rebooted, you will use the MakeOVPN script
+After the server-side setup is finished and the machine rebooted, you may use the MakeOVPN script
 to generate the .ovpn profiles you will import on each of your client machines. To generate your
-first client profile, execute the script in the command line with:
-
-```shell
-cd OpenVPN-Setup
-sudo chmod +x MakeOVPN.sh
-./MakeOVPN.sh
-```
+first client profile, execute the openvpnsetup script once again and choose option 02 in the menu,
+or else make the script MakeOVPN.sh executable and run it.
 
 You will be prompted to enter a name for your client. Pick anything you like and hit 'enter'. 
 You will be asked to enter a pass phrase for the client key - you'll be asked twice, so you won't
@@ -109,14 +109,9 @@ the script will assemble the client .ovpn file and place it in the directory 'ov
 home directory to make it easy to access using SFTP or SCP, which you'll need to do to move the
 profile to your client machine.
 
-To generate additional client .ovpn profiles for other devices you'd like to connect to the VPN,
-simply cd into OpenVPN-Setup and execute the MakeOVPN script, repeating the above steps, for each
-client:
-
-```shell
-cd OpenVPN-Setup
-./MakeOVPN.sh
-```
+To generate additional client .ovpn profiles at any time for other devices you'd like to connect
+to the VPN, cd into OpenVPN-Setup and execute the setup script, choose menu option 02, and repeat
+the above steps for each client.
 
 Importing .ovpn Profiles on Client Machines
 --------------------------------------------
@@ -146,13 +141,7 @@ Removing OpenVPN
 If at any point you wish to remove OpenVPN from your Pi and revert it to a
 pre-installation state, such as if you want to undo a failed installation to try installing
 again or you want to remove OpenVPN without installing a fresh Raspbian image and losing
-important files, just cd into OpenVPN-Setup and execute the remove.sh script with sudo:
-
-```shell
-cd OpenVPN-Setup
-sudo chmod +x remove.sh
-sudo ./remove.sh
-```
+important files, just cd into OpenVPN-Setup, execute the setup script, and choose option 03.
 
 Technical Support & User Feedback
 ---------------------------------
@@ -179,6 +168,7 @@ and to OpenVPN and their fantastic open-source community.
 
 Sources
 -------
+
 1: http://readwrite.com/2014/04/10/raspberry-pi-vpn-tutorial-server-secure-web-browsing
 
 2: http://readwrite.com/2014/04/11/building-a-raspberry-pi-vpn-part-two-creating-an-encrypted-client-side#awesm=~oB89WBfWrt21bV
