@@ -141,7 +141,8 @@ Removing OpenVPN
 If at any point you wish to remove OpenVPN from your Pi and revert it to a
 pre-installation state, such as if you want to undo a failed installation to try installing
 again or you want to remove OpenVPN without installing a fresh Raspbian image and losing
-important files, just cd into OpenVPN-Setup, execute the setup script, and choose option 03.
+important files, just cd into OpenVPN-Setup, execute the setup script, and choose option 03,
+or make remove.sh executable and run it with sudo.
 
 Technical Support & User Feedback
 ---------------------------------
