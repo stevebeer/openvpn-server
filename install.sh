@@ -98,5 +98,10 @@ sed 's/PUBLICIP/'$PUBLICIP'/' </home/pi/OpenVPN-Setup/Default.txt >/etc/openvpn/
 mkdir /home/pi/ovpns
 chmod 777 -R /home/pi/ovpns
 
+# Make other scripts in the package executable
+cd /home/pi/OpenVPN-Setup
+sudo chmod +x MakeOVPN.sh
+sudo chmod +x remove.sh
+
 whiptail --title "Setup OpenVPN" --msgbox "Configuration complete. Restart \
 system to apply changes and start VPN server." 8 78
