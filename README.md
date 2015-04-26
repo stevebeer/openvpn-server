@@ -164,8 +164,8 @@ if I can't, I'll find some more resources to point you to.
 
 I am also interested in improving this script, and will be adding features to it over time to
 make it easier, more intuitive, and/or more versatile. If you have any feature ideas or requests,
-or are interested in adding your ideas to it or testing it on other platforms, please also
-contact me. I will be happy to work with you!
+or are interested in adding your ideas to it, testing it on other platforms, or localizing it to
+another language, please also contact me. I will be happy to work with you!
 
 Thanks
 ------
