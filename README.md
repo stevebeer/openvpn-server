@@ -66,9 +66,9 @@ to choose which encryption method you wish the guts of your server to use, 1024-
 2048-bit; 2048-bit is more secure, but server setup will take much longer to complete. If
 you're unsure or don't have a convincing reason for 2048, just choose 1024.
 
-After this, the script go from the GUI back to the command line as it builds the server's
-own certificate authority. If you wish to enter identifying information for the CA,
-replace the default values in the file ca_info.txt (CO for country, ST for
+After this, the script will go from the GUI back to the command line as it builds the
+server's own certificate authority. If you wish to enter identifying information for the
+CA, replace the default values in the file ca_info.txt (CO for country, ST for
 state/province/territory, CITY for city or town, ORG for organization, etc.) before
 executing the setup script; however, this is not required, so if you have no desire or
 need for this, you may leave the ca_info.txt file as-is. After this, the script will
@@ -95,7 +95,7 @@ Making Client Profiles
 After the server-side setup is finished and the machine rebooted, you may use the MakeOVPN script
 to generate the .ovpn profiles you will import on each of your client machines. To generate your
 first client profile, execute the openvpnsetup script once again and choose option 02 in the menu,
-or else make the script MakeOVPN.sh executable and run it.
+or else make sure the script MakeOVPN.sh is executable and run it.
 
 You will be prompted to enter a name for your client. Pick anything you like and hit 'enter'. 
 You will be asked to enter a pass phrase for the client key - you'll be asked twice, so you won't
@@ -142,7 +142,7 @@ If at any point you wish to remove OpenVPN from your Pi and revert it to a
 pre-installation state, such as if you want to undo a failed installation to try installing
 again or you want to remove OpenVPN without installing a fresh Raspbian image and losing
 important files, just cd into OpenVPN-Setup, execute the setup script, and choose option 03,
-or make remove.sh executable and run it with sudo.
+or make sure remove.sh is executable and run it with sudo.
 
 Technical Support & User Feedback
 ---------------------------------
