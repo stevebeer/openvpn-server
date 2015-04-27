@@ -25,7 +25,7 @@ do
 				whiptail --title "Reboot" --msgbox "The system will reboot." 8 78
 			fi
 		;;
-		*) #whiptail --title "OpenVPN-Setup" --msgbox "You cancelled or are done." 8 78
+		*)
 			exitstatus=1
 			exit
 		;;
