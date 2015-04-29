@@ -7,9 +7,7 @@ About
 Shell script to set up Raspberry Pi (TM) as a VPN server using the free, open-source
 OpenVPN software. Includes templates of the necessary configuration files for easy
 editing prior to installation, as well as a script for easily generating client
-.ovpn profiles after setting up the server. Based on the ReadWrite tutorial
-'Building A Raspberry Pi VPN' by Lauren Orsini (see sources 1 and 2 at the bottom of
-this Readme).
+.ovpn profiles after setting up the server.
 
 To follow this guide and use the script to setup OpenVPN, you will need to have a
 Raspberry Pi Model B or later with an ethernet port, an SD or microSD
@@ -18,14 +16,15 @@ to the power needs of your model, and an ethernet cable to connect your Pi to yo
 router or gateway. It is recommended that you use a fresh image of Raspbian, but if
 you don't, be sure to make a backup image of your existing installation before
 proceeding. You will also need to setup your Pi with a static IP address (see
-either source 3 or 4) and have your router forward port 1194 (varies by model &
-manufacturer; consult your router manufacturer's documentation to do this). You
-should also find your Pi's local IP address on your network and the public IP
-address of your network and write them down before beginning. Enabling SSH on your
-Pi is also highly recommended, so that you can run a very compact headless server
-without a monitor or keyboard and be able to access it even more conveniently (This
-is also covered by source 4). And last but not least, you will need to be logged in
-under the default user pi,  so be sure to change pi's user password from the default.
+either source 1 or 2 at the bottom of this Readme) and have your router forward
+port 1194 (varies by model & manufacturer; consult your router manufacturer's
+documentation to do this). You should also find your Pi's local IP address on your
+network and the public IP address of your network and write them down before
+beginning. Enabling SSH on your Pi is also highly recommended, so that you can run a
+very compact headless server without a monitor or keyboard and be able to access it
+even more conveniently (This is also covered by source 2). And last but not least,
+you will need to be logged in under the default user pi,  so be sure to change pi's
+user password from the default.
 
 Server-Side Setup
 -----------------
@@ -173,18 +172,16 @@ Thanks
 
 This script automates and streamlines the process outlined by a great many people from many corners
 of the internet for setting up OpenVPN on a Raspberry Pi. In particular, it is based on the steps
-outlined by Lauren Orsini at readwrite.com in her excellent tutorial, and many thanks go to her for
-bringing together the steps of the setup process in a way that even I could understand. Thanks also
-go to the Raspberry Pi Foundation for the awesome Raspberry Pi, the wonderful Raspberry Pi community,
-and to OpenVPN and their fantastic open-source community.
+outlined by Lauren Orsini at readwrite.com in her excellent tutorial (see sources 3 and 4). Thanks
+also go to the Raspberry Pi Foundation, the wonderful Raspberry Pi community, and to OpenVPN.
 
 Sources
 -------
 
-1: http://readwrite.com/2014/04/10/raspberry-pi-vpn-tutorial-server-secure-web-browsing
+1: [ModMyPi: How to give your Raspberry Pi a Static IP Address](https://www.modmypi.com/blog/tutorial-how-to-give-your-raspberry-pi-a-static-ip-address)
 
-2: http://readwrite.com/2014/04/11/building-a-raspberry-pi-vpn-part-two-creating-an-encrypted-client-side#awesm=~oB89WBfWrt21bV
+2: [ReadWrite: 5 Pointers To Supercharge Your Raspberry Pi Projects](http://readwrite.com/2014/04/09/raspberry-pi-projects-ssh-remote-desktop-static-ip-tutorial?utm_content=readwrite3-orionautotweet&awesm=readwr.it_b1UN&utm_campaign=&utm_medium=readwr.it-twitter&utm_source=t.co#awesm=~oAXilI0BMOHsS3)
 
-3: https://www.modmypi.com/blog/tutorial-how-to-give-your-raspberry-pi-a-static-ip-address
+3: [ReadWrite: Building A Raspberry Pi VPN Part 1](http://readwrite.com/2014/04/10/raspberry-pi-vpn-tutorial-server-secure-web-browsing)
 
-4: http://readwrite.com/2014/04/09/raspberry-pi-projects-ssh-remote-desktop-static-ip-tutorial?utm_content=readwrite3-orionautotweet&awesm=readwr.it_b1UN&utm_campaign=&utm_medium=readwr.it-twitter&utm_source=t.co#awesm=~oAXilI0BMOHsS3
+4: [ReadWrite: Building A Raspberry Pi VPN Part 2](http://readwrite.com/2014/04/11/building-a-raspberry-pi-vpn-part-two-creating-an-encrypted-client-side#awesm=~oB89WBfWrt21bV)
