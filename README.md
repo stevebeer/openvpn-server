@@ -12,7 +12,7 @@ editing prior to installation, as well as a script for easily generating client
 this Readme).
 
 To follow this guide and use the script to setup OpenVPN, you will need to have a
-Raspberry Pi Model B or later (so long as it has an ethernet port), an SD or microSD
+Raspberry Pi Model B or later with an ethernet port, an SD or microSD
 card (depending on the model) with Raspbian installed, a power adapter appropriate
 to the power needs of your model, and an ethernet cable to connect your Pi to your
 router or gateway. It is recommended that you use a fresh image of Raspbian, but if
@@ -61,10 +61,10 @@ install simply by making the script install.sh executable and running it with su
 
 The script will first update your APT repositories, upgrade packages, and install OpenVPN,
 which will take some time. It will then ask you to input your Raspberry Pi's local IP
-address on your network and the public IP address of your network. Then, it will ask you
-to choose which encryption method you wish the guts of your server to use, 1024-bit or
-2048-bit; 2048-bit is more secure, but server setup will take much longer to complete. If
-you're unsure or don't have a convincing reason for 2048, just choose 1024.
+address on your network and the public IP address of your network, and then to choose
+which encryption method you wish the guts of your server to use, 1024-bit or 2048-bit;
+2048-bit is more secure, but server setup will take much longer to complete. If you're
+unsure or don't have a convincing reason for 2048, just choose 1024.
 
 After this, the script will go from the GUI back to the command line as it builds the
 server's own certificate authority. If you wish to enter identifying information for the
@@ -98,16 +98,14 @@ first client profile, execute the openvpnsetup script once again and choose opti
 or else make sure the script MakeOVPN.sh is executable and run it.
 
 You will be prompted to enter a name for your client. Pick anything you like and hit 'enter'. 
-You will be asked to enter a pass phrase for the client key - you'll be asked twice, so you won't
-accidentally mess it up, but make sure it's one you'll remember! You'll then be prompted for
-input in another series of identification fields, which you can again ignore if you like; make
-sure you again leave the challenge field blank. The script will then ask again whether you want
-to sign the client certificate and commit; press 'y' for both. You'll then be asked to enter the
-pass phrase you just chose in order to encrypt the client key, and immediately after to choose
+You will be asked to enter a pass phrase for the client key; make sure it's one you'll remember.
+You'll then be prompted for input in more identification fields, which you can again ignore if
+you like; make sure you again leave the challenge field blank. The script will then ask if you
+want to sign the client certificate and commit; press 'y' for both. You'll then be asked to enter
+the pass phrase you just chose in order to encrypt the client key, and immediately after to choose
 another pass phrase for the encrypted key - if you're normal, just use the same one. After this,
 the script will assemble the client .ovpn file and place it in the directory 'ovpns' within your
-home directory to make it easy to access using SFTP or SCP, which you'll need to do to move the
-profile to your client machine.
+home directory.
 
 To generate additional client .ovpn profiles at any time for other devices you'd like to connect
 to the VPN, cd into OpenVPN-Setup and execute the setup script, choose menu option 02, and repeat
@@ -139,10 +137,10 @@ Removing OpenVPN
 ----------------
 
 If at any point you wish to remove OpenVPN from your Pi and revert it to a
-pre-installation state, such as if you want to undo a failed installation to try installing
-again or you want to remove OpenVPN without installing a fresh Raspbian image and losing
-important files, just cd into OpenVPN-Setup, execute the setup script, and choose option 03,
-or make sure remove.sh is executable and run it with sudo.
+pre-installation state, such as if you want to undo a failed installation to try again or
+you want to remove OpenVPN without installing a fresh Raspbian image, just cd into
+OpenVPN-Setup, execute the setup script, and choose option 03, or make sure remove.sh is
+executable and run it with sudo.
 
 Technical Support & User Feedback
 ---------------------------------
@@ -152,15 +150,19 @@ feedback on your experience. If you have problems using it, feel free to send me
 I'll get back to you as soon as I can. My expertise is limited, but I will try to help, and
 if I can't, I'll find some more resources to point you to.
 
-I am also interested in improving this script, and will be adding features to it over time to
-make it easier, more intuitive, and/or more versatile. If you have any feature ideas or requests,
+Contributions
+-------------
+
+I'm also interested in improving this script, and will be adding features to it over time to
+make it easier, more intuitive, and more versatile. If you have any feature ideas or requests,
 or are interested in adding your ideas to it, testing it on other platforms, or localizing it to
 another language, please also contact me. I will be happy to work with you!
 
 This tool is free and open-source because those things are awesome and I think everything should
-be. However, we don’t yet have a Star Trek economy, so if you want and are able to buy me a
-gallon of gas or a couple bucks of my student loans, you can do so via [this PayPal link](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A4FRF9LEJC4V8), and I
-would be very grateful!
+be. However, we don’t yet have a Star Trek economy, so if you have found this tool to be useful
+and want to use
+[this PayPal link](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K99QGVL7KA6ZL)
+to buy me a gallon of gas, I would be very grateful!
 
 If you decide to do so, please also consider supporting OpenVPN; they
 have produced a wonderful open-source product, and all credit for it goes to their community and
