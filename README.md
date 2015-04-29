@@ -157,6 +157,15 @@ make it easier, more intuitive, and/or more versatile. If you have any feature i
 or are interested in adding your ideas to it, testing it on other platforms, or localizing it to
 another language, please also contact me. I will be happy to work with you!
 
+This tool is free and open-source because those things are awesome and I think everything should
+be. However, we don’t yet have a Star Trek economy, so if you want and are able to buy me a
+gallon of gas or a couple bucks of my student loans, you can do so via [this PayPal link](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=A4FRF9LEJC4V8), and I
+would be very grateful!
+
+If you decide to do so, please also consider supporting OpenVPN; they
+have produced a wonderful open-source product, and all credit for it goes to their community and
+their hard work. All I did was write a little automated front-end for its installation on Raspbian.
+
 Thanks
 ------
 
