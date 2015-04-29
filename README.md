@@ -61,20 +61,19 @@ install simply by making the script install.sh executable and running it with su
 The script will first update your APT repositories, upgrade packages, and install OpenVPN,
 which will take some time. It will then ask you to input your Raspberry Pi's local IP
 address on your network and the public IP address of your network, and then to choose
-which encryption method you wish the guts of your server to use, 1024-bit or 2048-bit;
-2048-bit is more secure, but server setup will take much longer to complete. If you're
-unsure or don't have a convincing reason for 2048, just choose 1024.
+which encryption method you wish the guts of your server to use, 1024-bit or 2048-bit.
+2048-bit is more secure, but will take much longer to set up. If you're unsure or don't
+have a convincing reason for 2048, just choose 1024.
 
-After this, the script will go from the GUI back to the command line as it builds the
-server's own certificate authority. If you wish to enter identifying information for the
+After this, the script will go back to the command line as it builds the server's own
+certificate authority. If you wish to enter identifying information for the
 CA, replace the default values in the file ca_info.txt (CO for country, ST for
-state/province/territory, CITY for city or town, ORG for organization, etc.) before
-executing the setup script; however, this is not required, so if you have no desire or
-need for this, you may leave the ca_info.txt file as-is. After this, the script will
-prompt you in the command line for input in similar identifying information fields as it
-generates your server certificate. Enter whatever you like, or if you do not desire to
-fill them out, skip them by pressing enter; make sure to skip the challenge field and
-leave it blank. After these fields, you will be asked whether you want to sign the
+state/province/territory, ORG for organization, etc.) before executing the setup script;
+however, this is not required, and you may leave the ca_info.txt file as-is. After this,
+the script will prompt you in the command line for input in similar identifying information
+fields as it generates your server certificate. Enter whatever you like, or if you do not
+desire to fill them out, skip them by pressing enter; make sure to skip the challenge field
+and leave it blank. After these fields, you will be asked whether you want to sign the
 certificate; you must press 'y'. You'll also be asked if you want to commit - press 'y'
 again.
 
@@ -144,8 +143,7 @@ Feedback
 
 I am interested in making this script work for as many people as possible, so I welcome any
 feedback on your experience. If you have problems using it, feel free to send me an email and
-I'll get back to you as soon as I can. My expertise is limited, but I will try to help, and
-if I can't, I'll find some more resources to point you to.
+I'll get back to you as soon as I can.
 
 Contributions
 -------------
