@@ -139,8 +139,8 @@ you want to remove OpenVPN without installing a fresh Raspbian image, just cd in
 OpenVPN-Setup, execute the setup script, and choose option 03, or make sure remove.sh is
 executable and run it with sudo.
 
-Technical Support & User Feedback
----------------------------------
+Feedback
+--------
 
 I am interested in making this script work for as many people as possible, so I welcome any
 feedback on your experience. If you have problems using it, feel free to send me an email and
