@@ -169,9 +169,9 @@ Thanks
 ------
 
 This script automates and streamlines the process outlined by a great many people from many corners
-of the internet for setting up OpenVPN on a Raspberry Pi. In particular, it is based on the steps
-outlined by Lauren Orsini at readwrite.com in her excellent tutorial (see sources 3 and 4). Thanks
-also go to the Raspberry Pi Foundation, the Raspberry Pi community, and to OpenVPN.
+of the internet for setting up OpenVPN on a Raspberry Pi. In particular, thanks go to Lauren Orsini
+at ReadWrite, who wrote the excellent tutorial upon which this script is based (see sources 3 and 4).
+Thanks also go to the Raspberry Pi Foundation, the Raspberry Pi community, and to OpenVPN.
 
 Sources
 -------
