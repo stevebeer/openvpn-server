@@ -81,12 +81,10 @@ again.
 Finally, the script will take some time to build the server's Diffie-Hellman key
 exchange. If you chose 1024-bit encryption, this will just take a few minutes, but if you
 chose 2048-bit, it will take much longer (anywhere from 40 minutes to several hours on a
-Model B+). However, you will not need to enter any more information, so you can go off
-and do your business whle waiting for this last step to finish. The script will also make
-some changes to your system to allow it to forward internet traffic and allow VPN
-connections through the Pi's firewall. When the script informs you that it has finished
-configuring OpenVPN, reboot the system to apply the script's changes, and the VPN
-server-side setup will be complete!
+Model B+). The script will also make some changes to your system to allow it to forward
+internet traffic and allow VPN connections through the Pi's firewall. When the script
+informs you that it has finished configuring OpenVPN, reboot the system to apply the
+changes, and the VPN server-side setup will be complete!
 
 Making Client Profiles
 ----------------------
