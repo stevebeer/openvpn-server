@@ -153,9 +153,7 @@ make it easier, more intuitive, and more versatile. If you have any feature idea
 or are interested in adding your ideas to it, testing it on other platforms, or localizing it to
 another language, please also contact me. I will be happy to work with you!
 
-This tool is free and open-source because those things are awesome and I think everything should
-be. However, we don’t yet have a Star Trek economy, so if you have found this tool to be useful
-and want to use
+If you have found this tool to be useful and want to use
 [this PayPal link](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K99QGVL7KA6ZL)
 to buy me a gallon of gas, I would be very grateful!
 
