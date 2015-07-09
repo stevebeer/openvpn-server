@@ -1,5 +1,13 @@
 #!/bin/bash
 
+askreboot() {
+	if (whiptail --title "Reboot" --yesno --defaultno "Would you like to reboot now?" 8 78) then
+		whiptail --title "Reboot" --msgbox "The system will reboot." 8 78
+		reboot
+	fi
+}
+
+
 exitstatus=0
 while [ $exitstatus = 0 ]
 do
@@ -12,18 +20,14 @@ do
 		01)
 			sudo chmod +x install.sh
 			sudo ./install.sh
-			if (whiptail --title "Reboot" --yesno --defaultno "Would you like to reboot now?" 8 78) then
-				whiptail --title "Reboot" --msgbox "The system will reboot." 8 78
-			fi
+			askreboot
 		;;
 		02)
 			./MakeOVPN.sh
 		;;
 		03)
 			sudo ./remove.sh
-			if (whiptail --title "Reboot" --yesno --defaultno "Would you like to reboot now?" 8 78) then
-				whiptail --title "Reboot" --msgbox "The system will reboot." 8 78
-			fi
+			askreboot
 		;;
 		*)
 			exitstatus=1
