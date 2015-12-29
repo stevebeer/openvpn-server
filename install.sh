@@ -91,8 +91,7 @@ sudo sysctl -p
 sed 's/LOCALIP/'$LOCALIP'/' </home/pi/OpenVPN-Setup/firewall-openvpn-rules.txt >/etc/firewall-openvpn-rules.sh
 sudo chmod 700 /etc/firewall-openvpn-rules.sh
 sudo chown root /etc/firewall-openvpn-rules.sh
-sed -i '/gateway/a \
-	pre-up /etc/firewall-openvpn-rules.sh' /etc/network/interfaces
+sed -i -e '$i \/etc/firewall-openvpn-rules.sh\n' /etc/rc.local
 
 # Write default file for client .ovpn profiles, to be used by the MakeOVPN script, using template .txt file
 sed 's/PUBLICIP/'$PUBLICIP'/' </home/pi/OpenVPN-Setup/Default.txt >/etc/openvpn/easy-rsa/keys/Default.txt
