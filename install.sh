@@ -15,6 +15,7 @@ echo "Updating, Upgrading, and Installing..."
 apt-get update
 apt-get -y upgrade
 apt-get -y install openvpn
+apt-get install easy-rsa
 
 # Read the local and public IP addresses from the user
 LOCALIP=$(whiptail --inputbox "What is your Raspberry Pi's local IP address?" \
@@ -51,8 +52,8 @@ cp -r /usr/share/easy-rsa /etc/openvpn
 # And change from default 1024 encryption if desired
 cd /etc/openvpn/easy-rsa
 sed -i 's:"`pwd`":"/etc/openvpn/easy-rsa":' vars
-if [ $ENCRYPT = 2048 ]; then
- sed -i 's:KEY_SIZE=1024:KEY_SIZE=2048:' vars
+if [ $ENCRYPT = 1024 ]; then
+ sed -i 's:KEY_SIZE=2048:KEY_SIZE=1024:' vars
 fi
 
 # source the vars file just edited
