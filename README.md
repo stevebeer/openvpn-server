@@ -4,33 +4,35 @@ OpenVPN-Setup
 About
 -----
 
-Shell script to set up Raspberry Pi (TM) as a VPN server using the free, open-source
-OpenVPN software. Includes templates of the necessary configuration files for easy
-editing prior to installation, as well as a script for easily generating client
-.ovpn profiles after setting up the server.
+Shell script to set up Raspberry Pi (TM) as a VPN server using the free,
+open-source OpenVPN software. Includes templates of the necessary configuration
+files for easy editing prior to installation, as well as a script for easily
+generating client .ovpn profiles after setting up the server.
 
-#Note
-The master branch of this script is currently being adapted for Raspbian Jessie, and
-has not been tested yet. If you would like to set up OpenVPN on Raspbian Wheezy, use
-the Wheezy branch, which is tested and functional.
+The master branch of this script installs and configures OpenVPN on Raspbian
+Jessie, and should be used if you are running Jessie or Jessie Lite. If you
+would like to set up OpenVPN on Raspbian Wheezy, use the Wheezy branch.
 
-To follow this guide and use the script to setup OpenVPN, you will need to have a
-Raspberry Pi Model B or later with an ethernet port, an SD or microSD
-card (depending on the model) with Raspbian installed, a power adapter appropriate
-to the power needs of your model, and an ethernet cable to connect your Pi to your
-router or gateway. It is recommended that you use a fresh image of Raspbian Wheezy
-from https://raspberrypi.org/downloads, but if you don't, be sure to make a backup
-image of your existing installation before proceeding.
-You will also need to setup your Pi with a static IP address (see
-either source 1 or 2 at the bottom of this Readme) and have your router forward
-port 1194 (varies by model & manufacturer; consult your router manufacturer's
-documentation to do this). You should also find your Pi's local IP address on your
-network and the public IP address of your network and write them down before
-beginning. Enabling SSH on your Pi is also highly recommended, so that you can run a
-very compact headless server without a monitor or keyboard and be able to access it
-even more conveniently (This is also covered by source 2). And last but not least,
-you will need to be logged in under the default user pi,  so be sure to change pi's
-user password from the default.
+Prerequisites
+-------------
+
+To follow this guide and use the script to setup OpenVPN, you will need to have
+a Raspberry Pi Model B or later with an ethernet port, an SD or microSD card
+(depending on the model) with Raspbian installed, a power adapter appropriate to
+ the power needs of your model, and an ethernet cable to connect your Pi to your
+router or gateway. It is recommended that you use a fresh image of Raspbian
+Jessie Lite or Wheezy from https://raspberrypi.org/downloads, but if you don't,
+be sure to make a backup image of your existing installation before proceeding.
+You will also need to setup your Pi with a static IP address (see either source
+  1 or 2 at the bottom of this Readme) and have your router forward port 1194
+  (varies by model & manufacturer; consult your router manufacturer's
+  documentation to do this). You should also find your Pi's local IP address on
+  your network and the public IP address of your network and write them down
+  before beginning. Enabling SSH on your Pi is also highly recommended, so that
+  you can run a very compact headless server without a monitor or keyboard and
+  be able to access it even more conveniently (This is also covered by source 2)
+  . And last but not least, you will need to be logged in under the default
+  user pi,  so be sure to change pi's user password from the default.
 
 Server-Side Setup
 -----------------
@@ -99,7 +101,7 @@ to generate the .ovpn profiles you will import on each of your client machines. 
 first client profile, execute the openvpnsetup script once again and choose option 02 in the menu,
 or else make sure the script MakeOVPN.sh is executable and run it.
 
-You will be prompted to enter a name for your client. Pick anything you like and hit 'enter'. 
+You will be prompted to enter a name for your client. Pick anything you like and hit 'enter'.
 You will be asked to enter a pass phrase for the client key; make sure it's one you'll remember.
 You'll then be prompted for input in more identification fields, which you can again ignore if
 you like; make sure you again leave the challenge field blank. The script will then ask if you
@@ -147,33 +149,40 @@ executable and run it with sudo.
 Feedback
 --------
 
-I am interested in making this script work for as many people as possible, so I welcome any
-feedback on your experience. If you have problems using it, feel free to send me an email and
-I'll get back to you as soon as I can.
+I am interested in making this script work for as many people as possible, so I
+welcome any feedback on your experience. If you have problems using it, feel
+free to leave a comment and send me an email and I'll get back to you as soon as
+ I can. It may take some time to resolve issues, as the number of users of this
+ script has grown and I no longer have as much time to devote towards
+ maintenance as when I first wrote the script.
 
 Contributions
 -------------
 
-I'm also interested in improving this script, and will be adding features to it over time to
-make it easier, more intuitive, and more versatile. If you have any feature ideas or requests,
-or are interested in adding your ideas to it, testing it on other platforms, or localizing it to
-another language, please also contact me. I will be happy to work with you!
+I'm also interested in improving this script, and will be adding features to it
+over time to make it easier, more intuitive, and more versatile. If you have any
+ feature ideas or requests, or are interested in adding your ideas to it,
+ testing it on other platforms, or localizing it to another language, please
+ comment or leave a pull request. I will be happy to work with you!
 
 If you have found this tool to be useful and want to use
 [this PayPal link](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=K99QGVL7KA6ZL)
 to buy me a gallon of gas, I would be very grateful!
 
 If you decide to do so, please also consider supporting OpenVPN; they
-have produced a wonderful open-source product, and all credit for it goes to their community and
-their hard work. All I did was write a little automated front-end for its installation on Raspbian.
+have produced a wonderful open-source product, and all credit for it goes to
+their community and their hard work. All I did was write a little automated
+front-end for its installation on Raspbian.
 
 Thanks
 ------
 
-This script automates and streamlines the process outlined by a great many people from many corners
-of the internet for setting up OpenVPN on a Raspberry Pi. In particular, thanks go to Lauren Orsini
-at ReadWrite, who wrote the excellent tutorial upon which this script is based (see sources 3 and 4).
-Thanks also go to the Raspberry Pi Foundation, the Raspberry Pi community, and to OpenVPN.
+This script automates and streamlines the process outlined by a great many
+people from many corners of the internet for setting up OpenVPN on a Raspberry
+Pi. In particular, thanks go to Lauren Orsini at ReadWrite, who wrote the
+excellent tutorial upon which this script is based (see sources 3 and 4). Thanks
+ also go to the Raspberry Pi Foundation, the Raspberry Pi community, and to
+ OpenVPN.
 
 Sources
 -------
