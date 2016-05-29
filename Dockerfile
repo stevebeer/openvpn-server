@@ -2,7 +2,7 @@ FROM ubuntu:15.04
 
 RUN apt-get update &&  apt-get upgrade -y 
 
-RUN apt-get install git
+RUN apt-get install git -y
 
 RUN cd 
 RUN git clone git://github.com/StarshipEngineer/OpenVPN-Setup
