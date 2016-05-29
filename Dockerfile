@@ -1,15 +1,15 @@
 FROM ubuntu:15.04
 
-RUN apt-get update \
-    apt-get upgrade -y \
-    apt-get install git
+RUN apt-get update &&  apt-get upgrade -y 
 
-RUN cd \
-    git clone git://github.com/StarshipEngineer/OpenVPN-Setup
+RUN apt-get install git
+
+RUN cd 
+RUN git clone git://github.com/StarshipEngineer/OpenVPN-Setup
     
 RUN cd OpenVPN-Setup
-    chmod +x openvpnsetup.sh \
-    ./openvpnsetup.sh
+RUN chmod +x openvpnsetup.sh 
+RUN ./openvpnsetup.sh
     
 VOLUME ["/etc/openvpn"]
 
